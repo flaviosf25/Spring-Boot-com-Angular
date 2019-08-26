@@ -1,0 +1,28 @@
+<a routerLink="/cadastro" class="btn btn-info">Cadastrar Transportadora</a>
+<app-pesquisa></app-pesquisa>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Whatsapp</th>
+            <th scope="col">E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transportadora of transportadoras">
+            <td>{{ transportadora.id }}</td>
+            <td><a href="mailto:{{ transportadora.nome }}" (click)="editarTransportadora(transportadora.id);" >{{ transportadora.nome }}</a></td>
+            <td>{{ transportadora.telefone.nuTelefone }}</td>
+            <td>{{ transportadora.telefone.nuCelular }}</td>
+            <td>{{ transportadora.telefone.nuWhatsapp }}</td>
+            <td>{{ transportadora.endereco.cidade }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

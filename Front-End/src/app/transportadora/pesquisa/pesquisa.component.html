@@ -1,0 +1,43 @@
+<div>
+    <form (ngSubmit)="onSubmit()" #transportadoraForm="ngForm">
+
+        <div class="form-group row">
+            <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-sm-5">
+                <input type="text" [(ngModel)]="filtro.nome" class="form-control" id="nome" name="nome" required
+                    #nome="ngModel">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="estado" class="col-sm-2 col-form-label">Estado</label>
+            <div class="col-sm-5">
+                <select [(ngModel)]="filtro.estado" class="form-control" id="estado" name="estado"
+                    required>
+                    <option *ngFor="let estado of listaEstados" [value]="estado">
+                        {{estado}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="cidade" class="col-sm-2 col-form-label">Cidade</label>
+            <div class="col-sm-5">
+                <input type="text" [(ngModel)]="filtro.cidade" class="form-control" id="cidade"
+                    name="cidade" required #cidade="ngModel">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="modal" class="col-sm-2 col-form-label">Modal</label>
+            <div class="col-sm-5">
+                <select [(ngModel)]="filtro.modal" class="form-control" id="modal" name="modal" required>
+                    <option *ngFor="let modal of listaModal" [value]="modal">
+                        {{modal}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info">Pesquisar</button>
+    </form>
+</div>
